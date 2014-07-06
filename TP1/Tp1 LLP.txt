@@ -1,0 +1,10 @@
+Sistema de supermercado
+-Cadastrar produtos (CRUD comp.)
+-Ver produtos por tema (mais baratos, mais caros, maior estoque, mais vendidos, preço médio dos produtos)
+-Registrar venda (em cada um o cliente tem que estar associado)
+-Exibir relatório de vendas(mais vendidos, total de vendas, valor de todas as vendas)
+-Cancelar venda
+-Cadastrar clientes(Clientes podem ser PF ou PJ)
+
+*Entregar diagrama de classes
+*Códigos-fonte
