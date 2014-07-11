@@ -11,8 +11,15 @@ package Model;
 public class PessoaFisica extends Cliente {
 
     private String cpf;
-    private int sexo;
+    private String sexo;
     private String dtNascimento;
+
+    public PessoaFisica(String cpf, String sexo, String dtNascimento, String nome, String telefone, String endereco, String bairro, String cep, String cidade, String estado) {
+        super(nome, telefone, endereco, bairro, cep, cidade, estado);
+        this.cpf = cpf;
+        this.sexo = sexo;
+        this.dtNascimento = dtNascimento;
+    }
 
     public String getCpf() {
         return cpf;
@@ -22,11 +29,11 @@ public class PessoaFisica extends Cliente {
         this.cpf = cpf;
     }
 
-    public int getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(int sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

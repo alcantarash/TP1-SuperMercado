@@ -59,7 +59,39 @@ public class GerenciaPessoaFisica {
    }
     
     
-    public void cadastrarPessoaFisica(){ 
+    public void cadastrarPessoaFisica(){
+                System.out.println("Informe o nome: ");
+                String nome = input.next();
+
+                System.out.println("Informe o Sexo (ex: Masculino ou Feminino): ");
+                String sexo = input.next().toUpperCase();
+                
+                System.out.println("Informe a Data de Nascimento: ");
+                String dtNascimento = input.next();
+                
+                System.out.println("Informe o CPF: ");
+                String cpf = input.next();
+                
+                System.out.println("Informe o Telefone: ");
+                String telefone = input.next();
+
+                System.out.println("Informe o Endereco: ");
+                String endereco = input.next();
+
+                System.out.println("Informe o Bairro: ");
+                String bairro = input.next();
+
+                System.out.println("Informe o CEP: ");
+                String cep = input.next();
+                
+                System.out.println("Informe o Cidade: ");
+                String cidade = input.next();
+
+                System.out.println("Informe o Estado: ");
+                String estado = input.next();
+                
+                pFisica = new PessoaFisica(cpf,sexo, dtNascimento, nome, telefone, endereco, bairro, cep, cidade, estado);
+                pessoa.add(posicao, pFisica);              
     }
     
     public void editarPessoaFisica(){ 
