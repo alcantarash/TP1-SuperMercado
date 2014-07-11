@@ -10,12 +10,24 @@ package Model;
  */
 public class Produto {
 
-    private int codProd;
+    private  int codProd;
     private String nome;
     private String descricao;
     private String validade;
     private double preco;
+    private static int cod = 0;
+    
 
+    public Produto(String nome, String descricao, String validade, double preco){
+    	this.nome = nome;
+    	this.descricao = descricao;
+    	this.validade = validade;
+    	this.preco = preco;
+    	setCod(1);
+    	setCodProd(getCod());
+    
+    }
+    
     public int getCodProd() {
         return codProd;
     }
@@ -55,4 +67,12 @@ public class Produto {
     public void setPreco(double preco) {
         this.preco = preco;
     }
+
+	public static int getCod() {
+		return cod;
+	}
+
+	public static void setCod(int cod) {
+		Produto.cod += cod;
+	}
 }
