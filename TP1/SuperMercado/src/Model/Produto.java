@@ -16,15 +16,18 @@ public class Produto {
     private String validade;
     private double preco;
     private static int cod = 0;
+    private int estoque;
     
 
-    public Produto(String nome, String descricao, String validade, double preco){
+	public Produto(String nome, String descricao, String validade, double preco, int estoque){
     	this.nome = nome;
     	this.descricao = descricao;
     	this.validade = validade;
     	this.preco = preco;
+    	this.estoque = estoque;
     	setCod(1);
     	setCodProd(getCod());
+    	
     
     }
     
@@ -75,4 +78,13 @@ public class Produto {
 	public static void setCod(int cod) {
 		Produto.cod += cod;
 	}
+	
+    public int getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(int estoque) {
+		this.estoque = estoque;
+	}
+	
 }
