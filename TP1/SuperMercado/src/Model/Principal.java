@@ -36,13 +36,16 @@ public class Principal {
 					 descricao = scan.next();
 					 System.out.println("Digite a validade do produto: ");
 					 validade = scan.next();
-					 validade = scan.next();
+					 System.out.println("");					 
 					 System.out.println("Digite preço do produto: ");
 					 preco = scan.nextDouble();
 					 
 					 produtos.add(item = new Produto(nome,descricao, validade, preco));					 
 					 System.out.println("Produto cadastrado com sucesso"); 
-					 System.out.println(produtos.get(0).getCodProd()); break;
+					 
+					 /* Só fiz pra testar a variável static que gera os códigos na classe produto
+					 for(Produto a : produtos)
+					 System.out.println(a.getCodProd()); break;*/ 
 					 
 			
 			}
