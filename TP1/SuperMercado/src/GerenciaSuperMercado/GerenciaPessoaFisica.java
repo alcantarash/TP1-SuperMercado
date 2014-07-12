@@ -189,7 +189,6 @@ public class GerenciaPessoaFisica {
                                 System.out.println("Sair!");
                             }
                         }
-                    
                     }while(opcao != 11);
                 }
             }
@@ -233,6 +232,5 @@ public class GerenciaPessoaFisica {
                 }
             }
         }
-    }
-    
+    }   
 }
