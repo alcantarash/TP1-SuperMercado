@@ -191,8 +191,6 @@ public class GerenciaPessoaFisica {
                         }
                     
                     }while(opcao != 11);
-                    
-                    
                 }
             }
         }
