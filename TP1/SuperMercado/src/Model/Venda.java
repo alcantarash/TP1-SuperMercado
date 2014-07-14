@@ -9,11 +9,21 @@ package Model;
  * @author ps0474
  */
 public class Venda {
+
+    private int codVenda;
     private int tipoCliente;
-    private int codCliente;
-    private int codProduto;
+    private Cliente cliente;
+    private Produto produto;
     private int qtdeProduto;
     private double valorTotal;
+
+    public int getCodVenda() {
+        return codVenda;
+    }
+
+    public void setCodVenda(int codVenda) {
+        this.codVenda = codVenda;
+    }
 
     public int getTipoCliente() {
         return tipoCliente;
@@ -23,20 +33,20 @@ public class Venda {
         this.tipoCliente = tipoCliente;
     }
 
-    public int getCodCliente() {
-        return codCliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setCodCliente(int codCliente) {
-        this.codCliente = codCliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public int getCodProduto() {
-        return codProduto;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setCodProduto(int codProduto) {
-        this.codProduto = codProduto;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public int getQtdeProduto() {
@@ -54,5 +64,5 @@ public class Venda {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
-    
+
 }
