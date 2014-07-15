@@ -212,7 +212,7 @@ public class GerenciaPessoaJuridica {
         }
     }
 
-    public PessoaJuridica retornaPessoaFisica(String cnpj) {
+    public PessoaJuridica retornaPessoaJuridica(String cnpj) {
 
         for (int i = 0; i < empresa.size(); i++) {
             if (empresa.get(i) != null) {

@@ -1,6 +1,7 @@
 package GerenciaSuperMercado;
 
 import Model.PessoaFisica;
+import Model.PessoaJuridica;
 import Model.Produto;
 import Model.Venda;
 import com.oracle.jrockit.jfr.Producer;
@@ -13,6 +14,7 @@ public class GerenciaVendas {
     public static ArrayList<Venda> vendas = new ArrayList<Venda>();
     public static GerenciaProduto produtos = new GerenciaProduto();
     public static GerenciaPessoaFisica clientes = new GerenciaPessoaFisica();
+    public static GerenciaPessoaJuridica empresa = new GerenciaPessoaJuridica();
     int posicao = 0;
     private int codVenda = 0;
 
@@ -58,7 +60,35 @@ public class GerenciaVendas {
         } while (opSubMenu != 5);
     }
 
-    public void cadastrarVenda() {
+    public void cadastrarVenda(){
+        int opcao;           
+       
+        do{
+            System.out.println("\nSelecione o tipo de Cliente");
+            System.out.println("1 - Pessoa Fisica");
+            System.out.println("2 - Pessoa Juridica");
+            System.out.println("3 - Sair");
+            System.out.println("\n\nDigite a opcao desejada:");
+            opcao = input.nextInt();
+            input.skip("\n");
+        
+            switch(opcao){
+                case 1:
+                    cadastrarVendaPessoaFisica();
+                    break;
+                    
+                case 2:
+                    cadastrarVendaPessoaJuridica();
+                    break;
+                    
+                default: {
+                    System.out.println("Sair: Tipo Cliente!");
+                }       
+            }
+        }while(opcao != 3);
+    }
+    
+    public void cadastrarVendaPessoaFisica() {
         System.out.println("Informe CPF do Cliente: ");
 
         PessoaFisica pf = clientes.retornaPessoaFisica(input.next());
@@ -86,6 +116,37 @@ public class GerenciaVendas {
                     System.out.println("Venda registrada com sucesso! Codigo da venda:" + (codVenda));
                 }
 
+            }
+        }
+    }
+    
+    public void cadastrarVendaPessoaJuridica() {
+        System.out.println("Informe CNPJ da Empresa: ");
+
+        PessoaJuridica pj = empresa.retornaPessoaJuridica(input.next());
+        if (pj == null) {
+            System.out.println("Empresa não encontrada!\n");
+        } else {
+            System.out.println("Informe o Codigo do Produto: ");
+            Produto prod = produtos.retornaProduto(input.nextInt());
+            if (prod == null) {
+                System.out.println("Produto não encontrado!\n");
+            } else {
+                System.out.println("Informe a quantidade do produto: ");
+                int quantidade = input.nextInt();
+                if (quantidade > prod.getEstoque()) {
+                    System.out.println("Quantidade insuficiente em estoque");
+                } else {
+                    Venda venda = new Venda();
+                    venda.setCliente(pj);
+                    venda.setProduto(prod);
+                    venda.setQtdeProduto(quantidade);
+                    venda.setValorTotal(quantidade * prod.getPreco());
+                    venda.setCodVenda(++codVenda);
+
+                    vendas.add(posicao, venda);
+                    System.out.println("Venda registrada com sucesso! Codigo da venda:" + (codVenda));
+                }
             }
         }
     }
