@@ -18,10 +18,10 @@ public class GerenciaVendas {
     int posicao = 0;
     private int codVenda = 0;
 
-    public void escolherOpcoes(GerenciaProduto prod, GerenciaPessoaFisica pf) {
+    public void escolherOpcoes(GerenciaProduto prod) {
 
         this.produtos = prod;
-        this.clientes = pf;
+        //this.clientes = pf;
         int opSubMenu;
         do {
             System.out.println("\nGereciamento de Vendas");

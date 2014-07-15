@@ -1,11 +1,43 @@
 
 import GerenciaSuperMercado.GerenciaPessoaFisica;
+import GerenciaSuperMercado.GerenciaPessoaJuridica;
 import GerenciaSuperMercado.GerenciaProduto;
 import GerenciaSuperMercado.GerenciaVendas;
 import GerenciaSuperMercado.Relatorios;
 import java.util.Scanner;
 
 public class Principal {
+    
+    public static void escolherCliente(){
+        Scanner input = new Scanner(System.in);
+        int opcao;
+        GerenciaPessoaFisica pf = new GerenciaPessoaFisica();
+        GerenciaPessoaJuridica pj = new GerenciaPessoaJuridica();
+       
+        do{
+            System.out.println("\nSelecione o tipo de Cliente");
+            System.out.println("1 - Pessoa Fisica");
+            System.out.println("2 - Pessoa Juridica");
+            System.out.println("3 - Sair");
+            System.out.println("\n\nDigite a opcao desejada:");
+            opcao = input.nextInt();
+            input.skip("\n");
+        
+            switch(opcao){
+                case 1:
+                    pf.escolherOpcoes();
+                    break;
+                    
+                case 2:
+                    pj.escolherOpcoes();
+                    break;
+                    
+                default: {
+                    System.out.println("Sair: Tipo Cliente!");
+                }       
+            }
+        }while(opcao != 3);
+    }
 
     public static void main(String[] args) {
 
@@ -20,7 +52,7 @@ public class Principal {
         do {
             System.out.println("--------Escolha uma opção--------");
             System.out.println("1 - Cadastro de produtos");
-            System.out.println("2 - Cadastro de clientes");
+            System.out.println("2 - Gerenciar Clientes");
             System.out.println("3 - Cadastro de vendas");
             System.out.println("4 - Relatórios");
             System.out.println("5 - Fechar Sistema");
@@ -32,10 +64,10 @@ public class Principal {
                     produtos.escolherOpcoes();
                     break;
                 case 2:
-                    pf.escolherOpcoes();
+                    escolherCliente();
                     break;
                 case 3:
-                    vendas.escolherOpcoes(produtos, pf);
+                    vendas.escolherOpcoes(produtos);
                     break;
                 case 4:
                     relatorios.escolherOpcoes(produtos, pf, vendas);
