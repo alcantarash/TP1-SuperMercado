@@ -88,7 +88,7 @@ public class GerenciaPessoaJuridica {
         empresa.add(posicao, pJuridica);
     }
     
-    public void editarPessoaFisica() {
+    public void editarPessoaJuridica() {
         String cnpjPesquisa;
         int opcao;
 
@@ -187,4 +187,57 @@ public class GerenciaPessoaJuridica {
             }
         }
     }
+
+
+    public void pesquisarPessoaJuridica() {
+
+        System.out.println("Informe o CNPJ:");
+        String cnpjPesquisa = input.next();
+
+        for (int i = 0; i < empresa.size(); i++) {
+            if (empresa.get(i) != null) {
+                if (cnpjPesquisa.equals(empresa.get(i).getCnpj())) {
+                    System.out.println("Cliente Encontrado!\n");
+                    System.out.println("Nome: " + empresa.get(i).getNome());
+                    System.out.println("CNPJ: " + empresa.get(i).getCnpj());
+                    System.out.println("Razao Social: " + empresa.get(i).getRazaoSocial());
+                    System.out.println("Telefone: " + empresa.get(i).getTelefone());
+                    System.out.println("Endereco: " + empresa.get(i).getEndereco());
+                    System.out.println("Bairro: " + empresa.get(i).getBairro());
+                    System.out.println("CEP: " + empresa.get(i).getCep());
+                    System.out.println("Cidade: " + empresa.get(i).getCidade());
+                    System.out.println("Estado: " + empresa.get(i).getEstado());
+                }
+            }
+        }
+    }
+
+    public PessoaJuridica retornaPessoaFisica(String cnpj) {
+
+        for (int i = 0; i < empresa.size(); i++) {
+            if (empresa.get(i) != null) {
+                if (cnpj.equals(empresa.get(i).getCnpj())) {
+                    return empresa.get(i);
+                }
+            }
+        }
+        return null;
+    }
+    
+    public void deletarPessoaJuridica() {
+
+        System.out.println("Informe o CNPJ:");
+        String cnpjDeleta = input.next();
+
+        for (int i = 0; i < empresa.size(); i++) {
+            if (empresa.get(i) != null) {
+                if (cnpjDeleta.equals(empresa.get(i).getCnpj())) {
+                    empresa.remove(i);
+                    System.out.println("cliente removido com sucesso...");
+                }
+            }
+        }
+    }
+
 }
+

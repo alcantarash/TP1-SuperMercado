@@ -216,7 +216,6 @@ public class GerenciaPessoaFisica {
                 }
             }
         }
-
     }
 
     public PessoaFisica retornaPessoaFisica(String cpf) {
@@ -229,7 +228,6 @@ public class GerenciaPessoaFisica {
             }
         }
         return null;
-
     }
 
     public void deletarPessoaFisica() {
