@@ -64,7 +64,10 @@ public class GerenciaPessoaFisica {
 
         System.out.println("Informe o Sexo (ex: Masculino ou Feminino): ");
         String sexo = input.next().toUpperCase();
-
+        if(!sexo.equals("MASCULINO") || !sexo.equals("FEMININO")){
+            System.out.println("Sexo Invalido!\n Digite (ex: Masculino ou Feminino): ");
+            sexo = input.next().toUpperCase();
+        }
         System.out.println("Informe a Data de Nascimento: ");
         String dtNascimento = input.next();
 
