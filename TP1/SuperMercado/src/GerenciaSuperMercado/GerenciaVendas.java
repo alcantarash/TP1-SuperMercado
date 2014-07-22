@@ -90,7 +90,7 @@ public class GerenciaVendas {
     
     public void cadastrarVendaPessoaFisica() {
         System.out.println("Informe CPF do Cliente: ");
-
+        
         PessoaFisica pf = clientes.retornaPessoaFisica(input.next());
         if (pf == null) {
             System.out.println("Cliente não encontrado!\n");
@@ -105,6 +105,8 @@ public class GerenciaVendas {
                 if (quantidade > prod.getEstoque()) {
                     System.out.println("Quantidade insuficiente em estoque");
                 } else {
+                    
+                    prod.setEstoque(prod.getEstoque()- quantidade);
                     Venda venda = new Venda();
                     venda.setCliente(pf);
                     venda.setProduto(prod);
@@ -137,6 +139,8 @@ public class GerenciaVendas {
                 if (quantidade > prod.getEstoque()) {
                     System.out.println("Quantidade insuficiente em estoque");
                 } else {
+                    
+                    prod.setEstoque(prod.getEstoque() - quantidade);
                     Venda venda = new Venda();
                     venda.setCliente(pj);
                     venda.setProduto(prod);

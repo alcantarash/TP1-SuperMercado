@@ -54,6 +54,7 @@ public class GerenciaProduto {
 
     public void cadastrarProduto() {
 
+        try{
         System.out.println("Digite o nome do produto: ");
         String nome = input.next();
         
@@ -71,6 +72,11 @@ public class GerenciaProduto {
 
         produtos.add(new Produto(nome, descricao, validade, preco, estoque));
         System.out.println("Produto cadastrado com sucesso! \n");
+        }catch(NumberFormatException e){
+            System.out.println("Formato de preco invalido!");
+            System.out.println("Digite o preço do produto: ");
+            double preco = input.nextDouble();
+        }
     }
 
     public void listarProdutos() {
