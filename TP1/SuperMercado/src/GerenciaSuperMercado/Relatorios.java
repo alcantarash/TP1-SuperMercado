@@ -98,4 +98,7 @@ public class Relatorios {
             }
         }
     }
+
+    public static void precoMedioProdutos(ArrayList<Produto> list) {
+    }
 }
