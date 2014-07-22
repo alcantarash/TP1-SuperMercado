@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GerenciaPessoaJuridica {
-    
+
     private Scanner input = new Scanner(System.in);
     public static ArrayList<PessoaJuridica> empresa = new ArrayList<PessoaJuridica>();
     public static PessoaJuridica pJuridica;
     int posicao = 0;
-    
+
     public void escolherOpcoes() {
 
         int opSubMenu;
@@ -49,11 +49,11 @@ public class GerenciaPessoaJuridica {
                     deletarPessoaJuridica();
                     break;
                 }
-                    
+
                 case 5: {
                     listarPessoaJuridica();
                     break;
-                }    
+                }
 
                 default: {
                     System.out.println("Sair: Gerencia Pessoa Juridica!");
@@ -61,14 +61,14 @@ public class GerenciaPessoaJuridica {
             }
         } while (opSubMenu != 6);
     }
-    
+
     public void cadastrarPessoaJuridica() {
         System.out.println("Informe o nome: ");
         String nome = input.next();
 
         System.out.println("Informe o CNPJ: ");
         String cnpj = input.next();
-        
+
         System.out.println("Informe a Razao Social: ");
         String razaoSocial = input.next();
 
@@ -93,7 +93,7 @@ public class GerenciaPessoaJuridica {
         pJuridica = new PessoaJuridica(cnpj, razaoSocial, nome, telefone, endereco, bairro, cep, cidade, estado);
         empresa.add(posicao, pJuridica);
     }
-    
+
     public void editarPessoaJuridica() {
         String cnpjPesquisa;
         int opcao;
@@ -134,7 +134,7 @@ public class GerenciaPessoaJuridica {
                                 empresa.set(i, pJuridica).setCnpj(cnpj);
                                 break;
                             }
-                                
+
                             case 3: {
                                 System.out.println("Informe a Razao Social:");
                                 String razaoSocial = input.next();
@@ -189,13 +189,12 @@ public class GerenciaPessoaJuridica {
                             }
                         }
                     } while (opcao != 10);
-                }else {
+                } else {
                     System.out.println("Empresa nao encontrada!");
                 }
             }
         }
     }
-
 
     public void pesquisarPessoaJuridica() {
 
@@ -215,10 +214,10 @@ public class GerenciaPessoaJuridica {
                     System.out.println("CEP: " + empresa.get(i).getCep());
                     System.out.println("Cidade: " + empresa.get(i).getCidade());
                     System.out.println("Estado: " + empresa.get(i).getEstado());
-                }else{
+                } else {
                     System.out.println("Empresa nao encotrada!");
                 }
-            }else{
+            } else {
                 System.out.println("Nao existem Empresas Cadastradas!");
             }
         }
@@ -235,7 +234,7 @@ public class GerenciaPessoaJuridica {
         }
         return null;
     }
-    
+
     public void deletarPessoaJuridica() {
 
         System.out.println("Informe o CNPJ:");
@@ -250,8 +249,8 @@ public class GerenciaPessoaJuridica {
             }
         }
     }
-    
-    public void listarPessoaJuridica(){
+
+    public void listarPessoaJuridica() {
         for (int i = 0; i < empresa.size(); i++) {
             if (empresa.get(i) != null) {
                 System.out.println("Cliente Encontrado!\n");
@@ -264,10 +263,9 @@ public class GerenciaPessoaJuridica {
                 System.out.println("CEP: " + empresa.get(i).getCep());
                 System.out.println("Cidade: " + empresa.get(i).getCidade());
                 System.out.println("Estado: " + empresa.get(i).getEstado());
-            }else{
+            } else {
                 System.out.println("Nao existem Empresas Cadastradas!");
             }
         }
     }
-    
 }
