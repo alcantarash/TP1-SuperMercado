@@ -11,6 +11,7 @@ public class Relatorios {
     public static GerenciaProduto produtos = new GerenciaProduto();
     public static GerenciaPessoaFisica clientes = new GerenciaPessoaFisica();
     public static GerenciaVendas vendas = new GerenciaVendas();
+    ArrayList<Produto> list;
 
     public void escolherOpcoes(GerenciaProduto prod, GerenciaPessoaFisica pf, GerenciaVendas v) {
 
@@ -32,20 +33,26 @@ public class Relatorios {
 
             switch (opSubMenu) {
                 case 1: {
-
+                    ordenaPrecoAsc();
                     break;
                 }
                 case 2: {
-
+                    ordenaPrecoAsc();
                     break;
                 }
 
                 case 3: {
-
+                    ordenaEstoqueDesc();
                     break;
                 }
 
-                case 4: {
+                case 4: { 
+                    System.out.println("Implemetar!");
+                    break;
+                }
+                
+                case 5: {
+                    precoMedioProdutos();
                     break;
                 }
 
@@ -56,7 +63,7 @@ public class Relatorios {
         } while (opSubMenu != 6);
     }
 
-    public static void ordenaPrecoAsc(ArrayList<Produto> list) {
+    public void ordenaPrecoAsc() {
         Produto aux;
 
         for (int i = 0; i < list.size(); i++) {
@@ -72,7 +79,7 @@ public class Relatorios {
 
     }
 
-    public static void ordenaPrecoDesc(ArrayList<Produto> list) {
+    public void ordenaPrecoDesc() {
         Produto aux;
         for (int i = 0; i < list.size(); i++) {
             for (int j = i; j < list.size(); j++) {
@@ -85,7 +92,7 @@ public class Relatorios {
         }
     }
 
-    public static void ordenaEstoqueDesc(ArrayList<Produto> list) {
+    public void ordenaEstoqueDesc() {
         Produto aux;
         for (int i = 0; i < list.size(); i++) {
             for (int j = i; j < list.size(); j++) {
@@ -99,6 +106,12 @@ public class Relatorios {
         }
     }
 
-    public static void precoMedioProdutos(ArrayList<Produto> list) {
+    public void precoMedioProdutos() {
+        double pTotal = 0.0;
+        for (int i = 0; i < list.size(); i++) {
+                pTotal = list.get(i).getPreco() + pTotal;
+        }
+        
+        System.out.println("O preco medio = R$ " + pTotal/list.size());
     }
 }
