@@ -1,8 +1,15 @@
+package Principal;
+
 
 import GerenciaSuperMercado.GerenciaPessoaFisica;
+import GerenciaSuperMercado.GerenciaPessoaFisica;
+import GerenciaSuperMercado.GerenciaPessoaJuridica;
 import GerenciaSuperMercado.GerenciaPessoaJuridica;
 import GerenciaSuperMercado.GerenciaProduto;
+import GerenciaSuperMercado.GerenciaProduto;
 import GerenciaSuperMercado.GerenciaVendas;
+import GerenciaSuperMercado.GerenciaVendas;
+import GerenciaSuperMercado.Relatorios;
 import GerenciaSuperMercado.Relatorios;
 import java.util.Scanner;
 

@@ -20,7 +20,8 @@ public class GerenciaPessoaFisica {
             System.out.println("2 - Editar Pessoa Fisica");
             System.out.println("3 - Pesquisar Pessoa Fisica");
             System.out.println("4 - Deletar Pessoa Fisica");
-            System.out.println("5 - Sair");
+            System.out.println("5 - Listar Pessoa Fisica");
+            System.out.println("6 - Sair");
             opSubMenu = input.nextInt();
             input.skip("\n");
 
@@ -44,12 +45,17 @@ public class GerenciaPessoaFisica {
                     deletarPessoaFisica();
                     break;
                 }
+                    
+                case 5: {
+                    listarPessoaFisica();
+                    break;
+                }
 
                 default: {
                     System.out.println("Sair: Gerencia Pessoa Fisica!");
                 }
             }
-        } while (opSubMenu != 5);
+        } while (opSubMenu != 6);
     }
 
     public void cadastrarPessoaFisica() {
@@ -213,7 +219,11 @@ public class GerenciaPessoaFisica {
                     System.out.println("CEP: " + pessoa.get(i).getCep());
                     System.out.println("Cidade: " + pessoa.get(i).getCidade());
                     System.out.println("Estado: " + pessoa.get(i).getEstado());
+                }else {
+                    System.out.println("Cliente nao Cadastrado!");
                 }
+            }else{
+                System.out.println("Não existem Clientes Cadastrados!");
             }
         }
     }
@@ -244,4 +254,24 @@ public class GerenciaPessoaFisica {
             }
         }
     }
+    
+    public void listarPessoaFisica(){
+       for (int i = 0; i < pessoa.size(); i++){
+           if (pessoa.get(i) != null) {
+               System.out.println("Nome: " + pessoa.get(i).getNome());
+               System.out.println("Sexo: " + pessoa.get(i).getSexo());
+               System.out.println("Data de Nascimento: " + pessoa.get(i).getDtNascimento());
+               System.out.println("CPF: " + pessoa.get(i).getCpf());
+               System.out.println("Telefone: " + pessoa.get(i).getTelefone());
+               System.out.println("Endereco: " + pessoa.get(i).getEndereco());
+               System.out.println("Bairro: " + pessoa.get(i).getBairro());
+               System.out.println("CEP: " + pessoa.get(i).getCep());
+               System.out.println("Cidade: " + pessoa.get(i).getCidade());
+               System.out.println("Estado: " + pessoa.get(i).getEstado());
+           }else {
+               System.out.println("Não existem Clientes Cadastrados!");
+           }
+       }
+    }
+    
 }
