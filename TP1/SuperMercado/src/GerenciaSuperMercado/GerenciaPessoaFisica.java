@@ -90,7 +90,8 @@ public class GerenciaPessoaFisica {
         String estado = input.next();
 
         pFisica = new PessoaFisica(cpf, sexo, dtNascimento, nome, telefone, endereco, bairro, cep, cidade, estado);
-        pessoa.add(posicao, pFisica);
+        pessoa.add(pFisica);
+
     }
 
     public void editarPessoaFisica() {

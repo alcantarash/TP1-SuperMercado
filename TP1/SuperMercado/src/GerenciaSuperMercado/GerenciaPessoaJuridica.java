@@ -91,8 +91,8 @@ public class GerenciaPessoaJuridica {
         String estado = input.next();
 
         pJuridica = new PessoaJuridica(cnpj, razaoSocial, nome, telefone, endereco, bairro, cep, cidade, estado);
-        empresa.add(posicao, pJuridica);
-    }
+        empresa.add(pJuridica);
+}
 
     public void editarPessoaJuridica() {
         String cnpjPesquisa;

@@ -114,7 +114,7 @@ public class GerenciaVendas {
                     venda.setValorTotal(quantidade * prod.getPreco());
                     venda.setCodVenda(++codVenda);
 
-                    vendas.add(posicao, venda);
+                    vendas.add(venda);
                     System.out.println("Venda registrada com sucesso! Codigo da venda:" + (codVenda));
                 }
 
@@ -148,7 +148,7 @@ public class GerenciaVendas {
                     venda.setValorTotal(quantidade * prod.getPreco());
                     venda.setCodVenda(++codVenda);
 
-                    vendas.add(posicao, venda);
+                    vendas.add(venda);
                     System.out.println("Venda registrada com sucesso! Codigo da venda:" + (codVenda));
                 }
             }
