@@ -195,6 +195,8 @@ public class GerenciaPessoaFisica {
                             }
                         }
                     } while (opcao != 11);
+                }else{
+                    System.out.println("Cliente nao Encontrado!");
                 }
             }
         }

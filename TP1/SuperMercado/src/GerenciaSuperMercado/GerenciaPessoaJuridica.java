@@ -24,7 +24,8 @@ public class GerenciaPessoaJuridica {
             System.out.println("2 - Editar Pessoa Juridica");
             System.out.println("3 - Pesquisar Pessoa Juridica");
             System.out.println("4 - Deletar Pessoa Juridica");
-            System.out.println("5 - Sair");
+            System.out.println("5 - Listar Pessoa Juridica");
+            System.out.println("6 - Sair");
             opSubMenu = input.nextInt();
             input.skip("\n");
 
@@ -48,12 +49,17 @@ public class GerenciaPessoaJuridica {
                     deletarPessoaJuridica();
                     break;
                 }
+                    
+                case 5: {
+                    listarPessoaJuridica();
+                    break;
+                }    
 
                 default: {
                     System.out.println("Sair: Gerencia Pessoa Juridica!");
                 }
             }
-        } while (opSubMenu != 5);
+        } while (opSubMenu != 6);
     }
     
     public void cadastrarPessoaJuridica() {
@@ -183,6 +189,8 @@ public class GerenciaPessoaJuridica {
                             }
                         }
                     } while (opcao != 10);
+                }else {
+                    System.out.println("Empresa nao encontrada!");
                 }
             }
         }
@@ -207,7 +215,11 @@ public class GerenciaPessoaJuridica {
                     System.out.println("CEP: " + empresa.get(i).getCep());
                     System.out.println("Cidade: " + empresa.get(i).getCidade());
                     System.out.println("Estado: " + empresa.get(i).getEstado());
+                }else{
+                    System.out.println("Empresa nao encotrada!");
                 }
+            }else{
+                System.out.println("Nao existem Empresas Cadastradas!");
             }
         }
     }
@@ -238,6 +250,24 @@ public class GerenciaPessoaJuridica {
             }
         }
     }
-
+    
+    public void listarPessoaJuridica(){
+        for (int i = 0; i < empresa.size(); i++) {
+            if (empresa.get(i) != null) {
+                System.out.println("Cliente Encontrado!\n");
+                System.out.println("Nome: " + empresa.get(i).getNome());
+                System.out.println("CNPJ: " + empresa.get(i).getCnpj());
+                System.out.println("Razao Social: " + empresa.get(i).getRazaoSocial());
+                System.out.println("Telefone: " + empresa.get(i).getTelefone());
+                System.out.println("Endereco: " + empresa.get(i).getEndereco());
+                System.out.println("Bairro: " + empresa.get(i).getBairro());
+                System.out.println("CEP: " + empresa.get(i).getCep());
+                System.out.println("Cidade: " + empresa.get(i).getCidade());
+                System.out.println("Estado: " + empresa.get(i).getEstado());
+            }else{
+                System.out.println("Nao existem Empresas Cadastradas!");
+            }
+        }
+    }
+    
 }
-
